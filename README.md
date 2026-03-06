@@ -1,158 +1,326 @@
-# 🧠 Cognitive Visual Attention Simulation
+<div align="center">
 
-A **Streamlit-based Cognitive AI project** that simulates how human visual attention works.  
-This project demonstrates how a cognitive system processes an image using **saliency maps**, **fixation-based scanning**, and **attention prioritization** to mimic human-like perception.  
+# 👁️ NeuroVision
+
+### Cognitive Visual Attention Simulation using Saliency and Fixation Modeling
+
+**A cognitive AI simulation that mimics how humans visually explore a scene using saliency maps and fixation-based attention scanning.**
+*Upload an image and watch how a cognitive system prioritizes visual information.*
+
+<br>
+
+[![Python](https://img.shields.io/badge/Python_3.12-3776AB?style=for-the-badge\&logo=python\&logoColor=white)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit_App-FF4B4B?style=for-the-badge\&logo=streamlit\&logoColor=white)](https://streamlit.io/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-Computer_Vision-5C3EE8?style=for-the-badge\&logo=opencv\&logoColor=white)](https://opencv.org/)
+[![NumPy](https://img.shields.io/badge/NumPy-Numerical_Computing-013243?style=for-the-badge\&logo=numpy\&logoColor=white)](https://numpy.org/)
+[![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-11557C?style=for-the-badge)](https://matplotlib.org/)
+[![MIT License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)]()
+
+</div>
 
 ---
 
-## 🚀 Features
+# 📖 What is NeuroVision?
 
-- 📸 Upload any image (PNG/JPG) for simulation.  
-- 🎯 Generates a **saliency map** using OpenCV to highlight important regions.  
-- 👀 Simulates **fixation points** that mimic eye-tracking movements.  
-- ⚙️ Adjustable parameters:
-  - Blur kernel size
-  - Saliency threshold
-  - Maximum fixations  
-- 📊 Interactive Streamlit UI with side panel controls.  
-- 📖 Footer explaining each cognitive AI concept in simple terms.  
+NeuroVision is a **Cognitive AI simulation system** that demonstrates how human visual attention works when observing a scene.
+
+Instead of processing images uniformly, humans naturally focus on **regions of interest**. This project simulates that behavior using **saliency maps and fixation-based scanning**, allowing users to observe how an artificial cognitive system prioritizes visual information.
+
+The system works as follows:
+
+1. A user uploads an image representing a **visual scene**.
+2. The system generates a **saliency map** highlighting visually prominent regions.
+3. The algorithm simulates **fixation points**, mimicking how human eyes move across a scene.
+4. The results are visualized interactively through a **Streamlit interface**.
+
+This provides a simple yet powerful demonstration of **attention modeling in cognitive AI systems**.
 
 ---
 
-## 📂 Project Structure
+# ✨ Features
 
+| Feature                          | Description                                               |
+| -------------------------------- | --------------------------------------------------------- |
+| 📸 **Image Upload Interface**    | Upload any PNG or JPG image for simulation                |
+| 🎯 **Saliency Map Generation**   | Highlights visually prominent regions                     |
+| 👀 **Fixation Simulation**       | Simulates eye movement across salient regions             |
+| ⚙️ **Adjustable Parameters**     | Customize blur kernel size, threshold, and fixation count |
+| 📊 **Interactive Visualization** | Real-time UI using Streamlit                              |
+| 🧠 **Cognitive AI Concepts**     | Demonstrates perception and attention modeling            |
+| 🎓 **Educational Tool**          | Ideal for AI and Cognitive Science coursework             |
+
+---
+
+# 🏗️ System Architecture
+
+### Visual Attention Pipeline
+
+```mermaid
+graph TD
+    A[👤 User Uploads Image] --> B[Streamlit Web Interface]
+    B --> C[Image Preprocessing]
+
+    C --> D[OpenCV Saliency Detection]
+    D --> E[Saliency Map Generation]
+
+    E --> F[Threshold Filtering]
+    F --> G[Top Salient Regions Selection]
+
+    G --> H[Fixation Simulation]
+    H --> I[Fixation Points Overlay]
+
+    I --> J[Visualization Output]
 ```
 
-visual\_attention\_streamlit/
-│── app.py              # Main Streamlit app
-│── requirements.txt    # Dependencies
-│── README.md           # Documentation
+---
 
-````
+### Cognitive Processing Workflow
+
+The simulation replicates a simplified version of human visual attention:
+
+1️⃣ **Scene Perception**
+
+* The uploaded image acts as a **visual stimulus**.
+
+2️⃣ **Saliency Computation**
+
+* OpenCV detects regions that visually stand out based on:
+
+  * color contrast
+  * edge intensity
+  * brightness variations
+
+3️⃣ **Attention Filtering**
+
+* A **threshold filter** removes low-importance regions.
+
+4️⃣ **Fixation Selection**
+
+* The system selects **top N salient points**.
+* These points simulate **human eye fixation behavior**.
+
+5️⃣ **Visualization**
+
+* Displays:
+
+  * Original image
+  * Saliency heatmap
+  * Fixation points overlay
 
 ---
 
-## ⚙️ Installation & Setup
+# 🛠️ Technology Stack
 
-1. Clone this repository:
+### Core System
+
+| Component            | Technology    |
+| -------------------- | ------------- |
+| Programming Language | `Python 3.9+` |
+| Web Interface        | `Streamlit`   |
+| Computer Vision      | `OpenCV`      |
+| Numerical Processing | `NumPy`       |
+| Visualization        | `Matplotlib`  |
+
+---
+
+# 📂 Project Structure
+
+```text
+visual_attention_streamlit/
+│
+├── app.py              # Main Streamlit application
+├── attention_model.py  # Saliency and fixation logic
+├── utils/
+│   └── image_utils.py  # Image preprocessing utilities
+│
+├── requirements.txt    # Project dependencies
+└── README.md           # Project documentation
+```
+
+---
+
+# 🚀 Installation & Setup
+
+### Prerequisites
+
+* Python 3.9+
+* pip
+
+---
+
+## 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/visual_attention_streamlit.git
 cd visual_attention_streamlit
-````
+```
 
-2. Create a virtual environment (recommended):
+---
+
+## 2️⃣ Create a Virtual Environment (Recommended)
 
 ```bash
 python -m venv venv
-source venv/bin/activate    # Mac/Linux
-venv\Scripts\activate       # Windows
 ```
 
-3. Install dependencies:
+### Activate Environment
+
+**Mac/Linux**
+
+```bash
+source venv/bin/activate
+```
+
+**Windows**
+
+```bash
+venv\Scripts\activate
+```
+
+---
+
+## 3️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Run the app:
+---
+
+# 🏃 Running the Application
+
+Launch the Streamlit application:
 
 ```bash
 streamlit run app.py
 ```
 
----
-
-## 🖼️ How It Works
-
-### 1. **Input Image**
-
-You upload an image which acts as the visual scene.
-
-### 2. **Saliency Map**
-
-* The system computes a **saliency map** (regions of interest).
-* Saliency = areas in the image that "stand out" (color contrast, edges, intensity).
-
-### 3. **Fixation Simulation**
-
-* The algorithm simulates **eye movements**.
-* Human eyes jump between points (fixations) instead of scanning line-by-line.
-* System chooses **top N salient points** as fixation spots.
-
-### 4. **Visualization**
-
-* Original image displayed.
-* Saliency map heat overlay shown.
-* Fixation points marked on the image.
-
----
-
-## 📘 Cognitive AI Concepts Used
-
-| Term                 | Meaning                                                                             |
-| -------------------- | ----------------------------------------------------------------------------------- |
-| **Saliency Map**     | Highlights important areas of an image that naturally grab attention.               |
-| **Fixation**         | A point where the human eye pauses briefly while scanning a scene.                  |
-| **Visual Attention** | Cognitive process of focusing on relevant parts of the scene while ignoring others. |
-| **Thresholding**     | Used to filter out low-importance areas from the saliency map.                      |
-| **Cognitive AI**     | AI methods inspired by how humans think, perceive, and process information.         |
-
----
-
-## 🛠️ Technologies Used
-
-* **Python 3.9+**
-* [Streamlit](https://streamlit.io/) – Interactive frontend
-* [OpenCV](https://opencv.org/) – Image processing & saliency detection
-* [NumPy](https://numpy.org/) – Matrix computations
-* [Matplotlib](https://matplotlib.org/) – Visualization support
-
----
-
-## 🎮 Example Run
-
-1. Upload this sample image:
-
-   ![Sample Image](https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Cat_poster_1.jpg/320px-Cat_poster_1.jpg)
-
-2. Get output:
-
-   * Left: Saliency map
-   * Right: Fixation simulation
-
----
-
-## 📚 Future Improvements
-
-* 🔮 Add **real eye-tracking data** integration.
-* 🖼️ Allow **video input** instead of static images.
-* 📊 Add **heatmaps** for attention over time.
-* 🤖 Combine with **deep learning models** for object detection + attention.
-
----
-
-## 🏫 Academic Value
-
-This project fits well for **Cognitive AI coursework** because:
-
-* It links **perception & attention** with AI techniques.
-* Explains **cognitive psychology** concepts via simulation.
-* Has enough technical depth (image processing + AI).
-* Yet remains lightweight for demonstration.
-
----
-
-## 👨‍💻 Author
-
-* **Name:** Your Name
-* **Course:** Cognitive AI – Digital Assignment
-* **University:** VIT Chennai
-
----
-
-## 📜 License
-
-This project is open-source under the [MIT License](LICENSE).
+The application will start locally at:
 
 ```
+http://localhost:8501
+```
+
+---
+
+# 🌐 Application Workflow
+
+### Step 1 — Upload Image
+
+Upload a PNG or JPG image representing the visual scene.
+
+---
+
+### Step 2 — Adjust Simulation Parameters
+
+Using the sidebar controls, configure:
+
+* **Blur kernel size**
+* **Saliency threshold**
+* **Maximum fixation points**
+
+---
+
+### Step 3 — Generate Attention Simulation
+
+The system processes the image and generates:
+
+* Saliency heatmap
+* Fixation simulation
+
+---
+
+### Step 4 — Analyze Output
+
+The UI displays:
+
+| Output          | Description                  |
+| --------------- | ---------------------------- |
+| Original Image  | Input visual scene           |
+| Saliency Map    | Regions attracting attention |
+| Fixation Points | Simulated eye movement       |
+
+---
+
+# 🧠 Cognitive AI Concepts Used
+
+| Concept              | Description                                   |
+| -------------------- | --------------------------------------------- |
+| **Saliency Map**     | Highlights visually important areas           |
+| **Fixation**         | A point where the eye briefly focuses         |
+| **Visual Attention** | Prioritization of relevant visual stimuli     |
+| **Thresholding**     | Filters out less important visual data        |
+| **Cognitive AI**     | AI inspired by human perception and cognition |
+
+---
+
+# 🐛 Known Issues & Troubleshooting
+
+### Saliency detection not working properly
+
+Ensure:
+
+* Images are **not extremely low resolution**
+* Contrast between objects is sufficient
+
+---
+
+### Streamlit UI not loading
+
+Verify the server started successfully:
+
+```
+http://localhost:8501
+```
+
+Restart the app if needed.
+
+---
+
+# 🔮 Future Improvements
+
+* 👁️ **Real eye-tracking dataset integration**
+* 🎥 **Video attention simulation**
+* 📊 **Temporal attention heatmaps**
+* 🤖 **Deep learning attention models**
+* 🧠 **Object detection + attention fusion**
+
+---
+
+# 🎓 Academic Value
+
+This project demonstrates key concepts from **Cognitive Artificial Intelligence**, including:
+
+* perception modeling
+* visual attention mechanisms
+* cognitive psychology principles
+* computational vision techniques
+
+It serves as a **lightweight educational simulation** for understanding how cognitive systems prioritize information.
+
+---
+
+# 👨‍💻 Author
+
+**Kishore P**
+CSE (AI & Robotics) – VIT Chennai
+
+---
+
+# 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+<div align="center">
+
+<br>
+
+<i>Understanding how machines can perceive the world like humans.</i>
+
+<br><br>
+
+<b>NeuroVision</b> — modeling attention in artificial cognitive systems.
+
+</div>
